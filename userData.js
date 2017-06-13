@@ -6,11 +6,7 @@ module.exports = function(usersSchema) {
 	
 		//get routes
 		const home = function(req, res, next) {
-			
-			//res.send('home page');
-			console.log('home route');
-			
-			return 'home route';
+			res.render('form');
 		}
 		
 		const graphData = function(req, res, next) {
@@ -28,7 +24,7 @@ module.exports = function(usersSchema) {
 			var surname = req.body.surname;
 			var city = req.body.city;
 			var about = req.body.about;
-			
+		
 		//add user
 			usersSchema({
 				userID: id,
@@ -36,12 +32,12 @@ module.exports = function(usersSchema) {
 				userSurname: surname,
 				userCity: city,
 				userAbout: about
-			}).then(function(result) {
+			}).save(function(result) {
 				console.log(result);
-			});
 			
-		//redirect home
-			res.redirect('/home');
+			//redirect home
+			res.redirect('/form');
+			});
 		}
 		
 		

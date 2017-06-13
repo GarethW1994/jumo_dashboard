@@ -13,13 +13,15 @@ var database_connection = require('./database-connection');
 //call database_connection function
 //pass in the mongoURL connection
 var dbconnection = database_connection(mongoURL);
-
+//require variables
 var models = require('./model');
-
 var userData = require('./userData');
 
+
 //create new instance
-var userData = userData(models);
+var userModel = models().userData;
+
+var userData = userData(userModel());
 
 //init Handlebars
 app.engine('handlebars', expressHandlebars({defaultLayout: 'main'}));
@@ -36,6 +38,9 @@ app.use(express.static('public'));
 app.get('/home', userData.home);
 
 app.get('/form', userData.addNewUser);
+
+//post routes
+app.post('/addUser', userData.addUser);
 
 var server = app.listen(3000, function() {
 
