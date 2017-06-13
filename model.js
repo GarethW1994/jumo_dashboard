@@ -25,7 +25,6 @@ module.exports = function () {
 			userAbout: {
 				type: String
 			}
-
 		});
 
 		//declare the unique values

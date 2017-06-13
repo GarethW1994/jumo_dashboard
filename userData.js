@@ -14,7 +14,13 @@ module.exports = function(usersSchema) {
 		}
 		
 		const addNewUser = function(req, res, next) {
+			
+		usersSchema.find({}, function(err, data) {
+			
+		}).then(function(data){
+			console.log(data);
 			res.render('form');
+		});
 		}
 		
 		//post route
@@ -24,7 +30,7 @@ module.exports = function(usersSchema) {
 			var surname = req.body.surname;
 			var city = req.body.city;
 			var about = req.body.about;
-		
+
 		//add user
 			usersSchema({
 				userID: id,
