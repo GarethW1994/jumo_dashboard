@@ -7,7 +7,7 @@ var expressHandlebars = require('express-handlebars');
 var bodyParser = require('body-parser');
 
 var database_connection = require('./database-connection')
-var models = require('./modules');
+var models = require('./model');
 
 var server = app.listen(3000, function() {
 
