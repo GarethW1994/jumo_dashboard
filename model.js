@@ -18,11 +18,11 @@ module.exports = function () {
 				type: String
 			},
 
-			city: {
+			userCity: {
 				type: String
 			},
 
-			about: {
+			userAbout: {
 				type: String
 			}
 
