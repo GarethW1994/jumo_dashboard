@@ -1,9 +1,152 @@
 <link rel="stylesheet" href="/public/css/style.css">
 <link rel="charts" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js">
-<canvas id="myCanvas" width="400" height="400">
+<canvas id="myCanvas" class="Tanzania" width="400" height="400">
 
 </canvas>
+<canvas id="myCanvas" class="Kenya" width="400" height="400">
 
+</canvas>
 <script>
+var Tanzania = document.querySelector('.Tanzania');
+
+var myMaizePieChart = new Chart(ctx,{
+    type: 'pie',
+    data: dataMaize,
+    options: options
+});
+
+dataMaize = {
+    datasets: [{
+        data: [1.5, 10.5]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "January - mid February",
+      "mid-February - December"
+    ]
+};
+var myRicePieChart = new Chart(ctx,{
+    type: 'pie',
+    data: dataRice,
+    options: options
+});
+
+dataRice = {
+    datasets: [{
+        data: [2, 10]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "May - June",
+      "July - April"
+    ]
+};
+var myWheatPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: dataWheat,
+    options: options
+});
+
+dataWheat = {
+    datasets: [{
+        data: [3, 9]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "May - July",
+      "August - April"
+    ]
+};
+var mySorghumPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: dataSorghum,
+    options: options
+});
+
+dataSorghum = {
+    datasets: [{
+        data: [2, 9]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "July - August",
+      "September - June"
+    ]
+};
+
+var Kenya = document.querySelector('.Kenya');
+
+var myMaizePieChartKenya = new Chart(ctx,{
+    type: 'pie',
+    data: dataMaizeKenya,
+    options: options
+});
+
+dataMaizeKenya = {
+    datasets: [{
+        data: [2, 10]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "October - November",
+      "December - September"
+    ]
+};
+var myPotatoePieChartKenya = new Chart(ctx,{
+    type: 'pie',
+    data: dataPotatoKenya,
+    options: options
+});
+
+dataPotatoKenya = {
+    datasets: [{
+        data: [1, 11]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "February",
+      "March - January"
+    ]
+};
+var myWheatPieChartKenya = new Chart(ctx,{
+    type: 'pie',
+    data: dataWheatKenya,
+    options: options
+});
+
+dataWheatKenya = {
+    datasets: [{
+        data: [2, 10]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "October - November",
+      "December - September"
+    ]
+};
+var myBeanPieChartKenya = new Chart(ctx,{
+    type: 'pie',
+    data: dataBeanKenya,
+    options: options
+});
+
+dataBeanKenya = {
+    datasets: [{
+        data: [2, 10]
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+      "August - September",
+      "October - July"
+    ]
+};
 
 </script>
