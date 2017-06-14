@@ -18,12 +18,12 @@
 .header-img{
   margin: auto;
 }
-header{
+.header{
   background-color: black;
   position: fixed;
   top: 0;
 }
-footer{
+.footer{
   background-color: black;
   position: fixed;
   bottom: 0;
