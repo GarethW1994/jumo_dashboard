@@ -19,9 +19,11 @@
           </tr>
 
           <tr>
-            <td>{{importantCat}}</td>
-            <td>{{importantAmnt}}</td>
-            <td>{{importantRat}}</td>
+			  {{#each important}}
+            <td>{{category}}</td>
+            <td>{{amount}}</td>
+            <td>{{rating}}</td>
+			  {{/each}}
           </tr>
       </table>
     </div><br>

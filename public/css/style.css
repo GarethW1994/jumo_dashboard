@@ -1,3 +1,34 @@
+/*Github avatars*/
+.gareth{
+  height: 30px;
+  width: 30px;
+}
+.dyllon{
+  height: 30px;
+  width: 30px;
+}
+.vaztonyo{
+  height: 30px;
+  width: 30px;
+}
+.shameera{
+  height: 30px;
+  width: 30px;
+}
+.header-img{
+  margin: auto;
+}
+header{
+  background-color: black;
+  position: fixed;
+  top: 0;
+}
+footer{
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  color: white;
+}
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
@@ -160,7 +191,7 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: white; }
 a:hover {
   color: #0FA0CE; }
 
