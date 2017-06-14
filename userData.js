@@ -22,33 +22,20 @@ module.exports = function(usersSchema) {
 		
 		const getUser = function(req, res, next) {
 			var id = req.params.user;
+			var importantDat = [];
 
 			var query = usersSchema.find({userID: id}, function(err, data) {
 				if (err) return (err);	
 			});
-			
-			var importantDat = [];
-			
+						
 			query.then(function(data) {	
-				
-				for (var i = 0; i < data.length; i++) {
-					importantDat.push(data[i].important);
-				}
-					
-				console.log(importantDat);
-				res.render('categories', {importantData: importantDat});
+			res.render('categories', {importantData: data});
 			});
 			
-			var promise = query.exec();
+	
 			
 		};
 		
-		
-		function getData(dt) {
-			var importantArr = dt[0];
-		console.log(importantArr);
-			return importantArr;
-		}
 		
 		const addNewUser = function(req, res, next) {
 			
@@ -67,19 +54,35 @@ module.exports = function(usersSchema) {
 			var surname = req.body.surname;
 			var city = req.body.city;
 			var about = req.body.about;
-//			
-//			var categoryImp = req.body.categoryImp;
-//			var amountImp = req.body.amountImp;
-//			var ratingImp = req.body.ratingImp;
-//			
-//			var categoryNeut = req.body.categoryNeut;
-//			var amountNeut = req.body.amountNeut;
-//			var ratingNeut = req.body.ratingNeut;
-//			
-//			var categoryNot = req.body.categoryNot;
-//			var amountNot = req.body.amountNot;
-//			var ratingNot = req.body.ratingNot;
 			
+			var categoryImp = [{
+					category: req.body.categoryImp,
+					amount: req.body.amountImp,
+					rating: req.body.ratingImp
+				},
+				{
+					category: req.body.categoryImp1,
+					amount: req.body.amountImp1,
+					rating: req.body.ratingImp1
+				}]
+					
+			
+			var categoryNeut = {
+				category: req.body.categoryNeut,
+				amount: req.body.amountNeut,
+				rating: req.body.ratingNeut
+			};
+		
+			var categoryNot = [{
+				category: req.body.categoryNot,
+				amount: req.body.amountNot,
+				rating: req.body.ratingNot
+			},
+			{
+				category: req.body.categoryNot1,
+				amount: req.body.amountNot1,
+				rating: req.body.ratingNot1
+			}] 
 		//add user
 			usersSchema({
 				userID: id,
@@ -87,16 +90,9 @@ module.exports = function(usersSchema) {
 				userSurname: surname,
 				userCity: city,
 				userAbout: about,
-//				categoryImp: categoryImp,
-//				amountImp: amountImp,
-//				ratingImp: ratingImp,
-//				categoryNeut : categoryNeut,
-//				amountNeut : amountNeut,
-//				ratingNeut : ratingNeut,
-//				categoryNeut : categoryNeut,
-//				categoryNot : categoryNot,
-//				amountNot : amountNot,
-//				ratingNot : ratingNot
+				important: categoryImp,
+				neutral: [categoryNeut],
+				notImportant: categoryNot
 			}).save(function(result) {
 				console.log(result);
 			

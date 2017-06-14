@@ -1,16 +1,17 @@
-<link rel="stylesheet" href="style.css">
+
+{{>header}}
 
 <div class="container">
 
-
+{{#each importantData}}
   <h3>{{userName}}</h3>  <h3>{{userSurname}}</h3> <h3>{{userCity}}</h3><br>
   <p>{{userAbout}}</p>
-
+{{/each}}
   <br><br></br>
 
   <div class="row1">
     <div class="nine.columns" class="important">
-      <h4>Important</h4>
+      <h4>Important Expenses</h4>
       <table>
           <tr>
             <th>Category Name</th>
@@ -18,28 +19,68 @@
             <th>Rating</th>
           </tr>
 
-          <tr>
 			  {{#each importantData}}
+			  {{#each important}}
+          <tr>
+			  		<td>{{category}}</td>
+			  		<td>{{amount}}</td>
 			  		<td>{{rating}}</td>
-			  {{/each}}
 		 </tr>
+			  {{/each}}
+			  {{/each}}
       </table>
-    </div><br>
-    <div class="nine.columns"></div>
+    </div>
+	  <br>
 
   </div><br>
 
   <div class="row2">
-    <div class="nine.columns"></div><br>
-    <div class="nine.columns"></div>
+    <div class="nine.columns" class="neutral">
+	  <h4>Neutral Expenses</h4>
+      <table>
+          <tr>
+            <th>Category Name</th>
+            <th>Amount</th>
+            <th>Rating</th>
+          </tr>
 
+			  {{#each importantData}}
+			  {{#each neutral}}
+          <tr>
+			  		<td>{{category}}</td>
+			  		<td>{{amount}}</td>
+			  		<td>{{rating}}</td>
+		 </tr>
+			  {{/each}}
+			  {{/each}}
+      </table>
+	  </div><br>
   </div><br>
 
   <div class="row3">
-    <div class="nine.columns"></div><br>
-    <div class="nine.columns"></div>
+    <div class="nine.columns" class="notImportant">
+	  <h4>Not Important Expenses</h4>
+      <table>
+          <tr>
+            <th>Category Name</th>
+            <th>Amount</th>
+            <th>Rating</th>
+          </tr>
 
+			  {{#each importantData}}
+			  {{#each notImportant}}
+          <tr>
+			  		<td>{{category}}</td>
+			  		<td>{{amount}}</td>
+			  		<td>{{rating}}</td>
+		 </tr>
+			  {{/each}}
+			  {{/each}}
+      </table>
+	  </div>
   </div>
 
 
 </div>
+
+{{>footer}}
