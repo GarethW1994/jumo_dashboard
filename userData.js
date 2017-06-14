@@ -24,7 +24,9 @@ module.exports = function(usersSchema) {
 			usersSchema.find({userID: id}, function(err, data) {
 				if (err) return (err);
 			}).then(function(userInfo) {
-				console.log(userInfo[0].important);
+				console.log(userInfo[0]);
+				
+				res.render('categories');
 			});
 		}
 		
