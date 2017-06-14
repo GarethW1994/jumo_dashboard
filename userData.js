@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 
 module.exports = function(usersSchema) {
+		var importantCat = [];
 	
 		//get routes
 		const home = function(req, res, next) {
@@ -20,13 +21,20 @@ module.exports = function(usersSchema) {
 		
 		const getUser = function(req, res, next) {
 			var id = req.params.user;
+		
+			var data = getData(id);
 			
-			usersSchema.find({userID: id}, function(err, data) {
+			console.log(data);
+		}
+		
+		function getData(userId) {
+			
+			usersSchema.find({userID: userId}, function(err, data) {
 				if (err) return (err);
-			}).then(function(userInfo) {
-				console.log(userInfo[0]);
+			}).then(function(data) {
+				return data;
 				
-				res.render('categories');
+				console.log(data);
 			});
 		}
 		
