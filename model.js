@@ -24,7 +24,25 @@ module.exports = function () {
 
 			userAbout: {
 				type: String
-			}
+			},
+			
+			important : [{
+				categoryImp : String,
+				amountImp: Number,
+				ratingImp: String
+			}],
+			
+			neutral : [{
+				categoryNeut: String,
+				amountNeut: Number,
+				ratingNeut: String
+			}],
+			
+			notImportant : [{
+				categoryNot: String,
+				amountNot: Number,
+				ratingNot: String
+			}]
 		});
 
 		//declare the unique values
