@@ -30,21 +30,21 @@ module.exports = function () {
 			},
 			
 			important : [{
-				categoryImp : String,
-				amountImp: Number,
-				ratingImp: String
+				category : String,
+				amount: Number,
+				rating: String
 			}],
 			
 			neutral : [{
-				categoryNeut: String,
-				amountNeut: Number,
-				ratingNeut: String
+				category: String,
+				amount: Number,
+				rating: String
 			}],
 			
 			notImportant : [{
-				categoryNot: String,
-				amountNot: Number,
-				ratingNot: String
+				category: String,
+				amount: Number,
+				rating: String
 			}]
 		});
 
