@@ -54,22 +54,47 @@ header {
 	width: 100%;
 }
 
-.containerGraphs {
-	width: 100%;
-	display: block;
+.tanGraphs {
+	width: 90%;
+	height: 350px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.kenGraphs {
+	margin-top: 50px;
+	width: 90%;
+	height: 350px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
 .tanzaniaGraph {
-	width: 20%;
-	height: 20%;
+	width: 30%;
+	height: 30%;
+	position: relative;
+}
+.kenyaGraph {
+	margin-bottom: 50px;
+	width: 30%;
+	height: 30%;
 }
 
-.kenyaGraph {
-	margin-top: 370px;
-	margin-bottom: 50px;
-	width: 20%;
-	height: 20%;
+
+.tan-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;		
 }
+
+.ken-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 .graph_button {
 	background-color: steelblue;
