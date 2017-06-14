@@ -4,13 +4,17 @@
 <div class="container">
 
 {{#each importantData}}
-  <h4>Name: {{userName}}</h4>  <h4>Surname: {{userSurname}}</h4> <h4>City: {{userCity}}</h4><br>
+ <div class="info">
+	<h5>Name: {{userName}}</h5>  <h5>Surname: {{userSurname}}</h5> 	<h5>City: {{userCity}}</h5><br>
+	 <h5>About {{userName}}:</h5>  
+	 <p>{{userAbout}}</p>
+	 <hr/>
+</div>
 
-<h4>About {{userName}}:</h4>  
-<p>{{userAbout}}</p>
 {{/each}}
-  <br><br></br>
-
+  
+ <div class="info2">
+	
   <div class="row1">
     <div class="nine.columns" class="important">
       <h4>Important Expenses</h4>
@@ -84,5 +88,5 @@
 
 
 </div>
-
+</div>
 {{>footer}}
