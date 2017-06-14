@@ -1,7 +1,8 @@
 <table>
-  {{#each users}}
+  {{#each user}}
   <tr class="user">
-    <td>{{name}} {{surname}}</td>
-    <td><input type="button" class="user_data" value="View User Profile"></td>
+    <td>{{userName}} {{userSurname}}</td>
+	  <td><a href="/getUser/{{userID}}"><input type="button" class="user_data" value="View User Profile"></a></td>
   </tr>
+{{/each}}
 </table>

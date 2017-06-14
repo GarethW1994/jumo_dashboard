@@ -8,7 +8,7 @@ module.exports = function(usersSchema) {
 		const home = function(req, res, next) {
 			usersSchema.find({}, function(err, data) {
 				if (err) return(err);
-				console.log(data);
+				//console.log(data);
 			}).then(function(data) {
 			res.render('home', {user: data});
 			});			
@@ -16,6 +16,16 @@ module.exports = function(usersSchema) {
 		
 		const graphData = function(req, res, next) {
 			res.send('graph data');
+		}
+		
+		const getUser = function(req, res, next) {
+			var id = req.params.user;
+			
+			usersSchema.find({userID: id}, function(err, data) {
+				if (err) return (err);
+			}).then(function(userInfo) {
+				console.log(userInfo[0].important);
+			});
 		}
 		
 		const addNewUser = function(req, res, next) {
@@ -79,7 +89,7 @@ module.exports = function(usersSchema) {
 			home,
 			graphData,
 			addNewUser,
-			
+			getUser,	
 			//post routes
 			addUser
 		}
