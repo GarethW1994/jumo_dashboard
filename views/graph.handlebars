@@ -1,95 +1,109 @@
-<h1>jfdlkjalkj</h1>
-<canvas id="myCanvas" class="Tanzania" width="400" height="400">
-</canvas>
+{{>header}}
 
-<canvas id="myCanvas" class="Kenya" width="400" height="400">
+<div class="containerGraphs">
+<div class="tanzaniaGraph">
+<h1>Tanzania Harverst Period For Maize</h1>
+<canvas id="myCanvas" class="maize" height="100%" width="100%">
 
 </canvas>
+</div>
+
+
+
+<div class="kenyaGraph">
+<h1>Kenya Harverst Period For Maize</h1>
+<canvas id="myCanvas" class="Kenya" width="100%" height="100%"></canvas>
+</div>	
+</div>	
+
 <script>
 
-var Tanzania = document.querySelector('.Tanzania');
+var maize = document.querySelector('.maize');
 
-var myMaizePieChart = new Chart(Tanzania,{
-    type: 'pie',
-    data: dataMaize,
-    options: options
-});
-
-dataMaize = {
+	
+var dataMaize = {
     datasets: [{
-        data: [1.5, 10.5]
+        data: [1.5, 10.5],
+		backgroundColor: ['Red', 'Blue']
     }],
-
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
       "January - mid February",
       "mid-February - December"
     ]
 };
+
+var myMaizePieChart = new Chart(maize,{
+    type: 'pie',
+    data: dataMaize
+});
 	
-var myRicePieChart = new Chart(ctx,{
-    type: 'pie',
-    data: dataRice,
-    options: options
-});
+//var dataRice = {
+//    datasets: [{
+//        data: [2, 10]
+//    }],
+//
+//    // These labels appear in the legend and in the tooltips when hovering different arcs
+//    labels: [
+//      "May - June",
+//      "July - April"
+//]};
+//	
+//var myRicePieChart = new Chart(rice,{
+//    type: 'pie',
+//    data: dataRice,
+//    options: options
+//});
+//	
+//var dataWheat = {
+//    datasets: [{
+//        data: [3, 9]
+//    }],
+//
+//    // These labels appear in the legend and in the tooltips when hovering different arcs
+//    labels: [
+//      "May - July",
+//      "August - April"
+//    ]
+//};
+//
+//var dataSorghum = {
+//    datasets: [{
+//        data: [2, 9]
+//    }],
+//
+//    // These labels appear in the legend and in the tooltips when hovering different arcs
+//    labels: [
+//      "July - August",
+//      "September - June"
+//    ]
+//};
+	
 
-dataRice = {
-    datasets: [{
-        data: [2, 10]
-    }],
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      "May - June",
-      "July - April"
-    ]
-};
-var myWheatPieChart = new Chart(ctx,{
-    type: 'pie',
-    data: dataWheat,
-    options: options
-});
+	
 
-dataWheat = {
-    datasets: [{
-        data: [3, 9]
-    }],
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      "May - July",
-      "August - April"
-    ]
-};
-var mySorghumPieChart = new Chart(ctx,{
-    type: 'pie',
-    data: dataSorghum,
-    options: options
-});
+//var myWheatPieChart = new Chart(Tanzania,{
+//    type: 'pie',
+//    data: dataWheat,
+//    options: options
+//});
+//
+//var mySorghumPieChart = new Chart(Tanzania,{
+//    type: 'pie',
+//    data: dataSorghum,
+//    options: options
+//});
 
-dataSorghum = {
-    datasets: [{
-        data: [2, 9]
-    }],
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      "July - August",
-      "September - June"
-    ]
-};
 
 var Kenya = document.querySelector('.Kenya');
 
-var myMaizePieChartKenya = new Chart(ctx,{
-    type: 'pie',
-    data: dataMaizeKenya,
-    options: options
-});
-
-dataMaizeKenya = {
+var dataMaizeKenya = {
     datasets: [{
-        data: [2, 10]
+        data: [15, 2],
+	backgroundColor: ['Gold', 'Black']
     }],
 
     // These labels appear in the legend and in the tooltips when hovering different arcs
@@ -98,56 +112,62 @@ dataMaizeKenya = {
       "December - September"
     ]
 };
-var myPotatoePieChartKenya = new Chart(ctx,{
+
+var myMaizePieChartKenya = new Chart(Kenya,{
     type: 'pie',
-    data: dataPotatoKenya,
-    options: options
+    data: dataMaizeKenya
 });
 
-dataPotatoKenya = {
-    datasets: [{
-        data: [1, 11]
-    }],
+//var myPotatoePieChartKenya = new Chart(ctx,{
+//    type: 'pie',
+//    data: dataPotatoKenya,
+//    options: options
+//});
+//
+//dataPotatoKenya = {
+//    datasets: [{
+//        data: [1, 11]
+//    }],
+//
+//    // These labels appear in the legend and in the tooltips when hovering different arcs
+//    labels: [
+//      "February",
+//      "March - January"
+//    ]
+//};
+//var myWheatPieChartKenya = new Chart(ctx,{
+//    type: 'pie',
+//    data: dataWheatKenya,
+//    options: options
+//});
+//
+//dataWheatKenya = {
+//    datasets: [{
+//        data: [2, 10]
+//    }],
+//
+//    // These labels appear in the legend and in the tooltips when hovering different arcs
+//    labels: [
+//      "October - November",
+//      "December - September"
+//    ]
+//};
+//var myBeanPieChartKenya = new Chart(ctx,{
+//    type: 'pie',
+//    data: dataBeanKenya,
+//    options: options
+//});
+//
+//dataBeanKenya = {
+//    datasets: [{
+//        data: [2, 10]
+//    }],
+//
+//    // These labels appear in the legend and in the tooltips when hovering different arcs
+//    labels: [
+//      "August - September",
+//      "October - July"
+//    ]
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      "February",
-      "March - January"
-    ]
-};
-var myWheatPieChartKenya = new Chart(ctx,{
-    type: 'pie',
-    data: dataWheatKenya,
-    options: options
-});
-
-dataWheatKenya = {
-    datasets: [{
-        data: [2, 10]
-    }],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      "October - November",
-      "December - September"
-    ]
-};
-var myBeanPieChartKenya = new Chart(ctx,{
-    type: 'pie',
-    data: dataBeanKenya,
-    options: options
-});
-
-dataBeanKenya = {
-    datasets: [{
-        data: [2, 10]
-    }],
-
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      "August - September",
-      "October - July"
-    ]
-};
 
 </script>

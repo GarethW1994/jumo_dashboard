@@ -54,6 +54,28 @@ header {
 	width: 100%;
 }
 
+.containerGraphs {
+	width: 100%;
+	display: block;
+}
+
+.tanzaniaGraph {
+	width: 20%;
+	height: 20%;
+}
+
+.kenyaGraph {
+	margin-top: 370px;
+	margin-bottom: 50px;
+	width: 20%;
+	height: 20%;
+}
+
+.graph_button {
+	background-color: steelblue;
+	margin: 40px 100px;
+}
+
 /*
 * Skeleton V2.0.4
 * Copyright 2014, Dave Gamache
