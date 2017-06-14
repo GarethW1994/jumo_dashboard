@@ -12,7 +12,7 @@ module.exports = function(usersSchema) {
 				if (err) return(err);
 				//console.log(data);
 			}).then(function(data) {
-			res.render('home', {user: data});
+			res.render('/', {user: data});
 			});			
 		}
 		
