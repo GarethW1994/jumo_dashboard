@@ -1,15 +1,15 @@
-<link rel="stylesheet" href="/public/css/style.css">
-<link rel="charts" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js">
+<h1>jfdlkjalkj</h1>
 <canvas id="myCanvas" class="Tanzania" width="400" height="400">
-
 </canvas>
+
 <canvas id="myCanvas" class="Kenya" width="400" height="400">
 
 </canvas>
 <script>
+
 var Tanzania = document.querySelector('.Tanzania');
 
-var myMaizePieChart = new Chart(ctx,{
+var myMaizePieChart = new Chart(Tanzania,{
     type: 'pie',
     data: dataMaize,
     options: options
@@ -26,6 +26,7 @@ dataMaize = {
       "mid-February - December"
     ]
 };
+	
 var myRicePieChart = new Chart(ctx,{
     type: 'pie',
     data: dataRice,

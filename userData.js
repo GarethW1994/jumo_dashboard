@@ -17,7 +17,7 @@ module.exports = function(usersSchema) {
 		}
 		
 		const graphData = function(req, res, next) {
-			res.send('graph data');
+			res.render('graph');
 		}
 		
 		const getUser = function(req, res, next) {
@@ -31,9 +31,6 @@ module.exports = function(usersSchema) {
 			query.then(function(data) {	
 			res.render('categories', {importantData: data});
 			});
-			
-	
-			
 		};
 		
 		

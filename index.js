@@ -41,6 +41,8 @@ app.get('/form', userData.addNewUser);
 
 app.get('/getUser/:user', userData.getUser);
 
+app.get('/graph', userData.graphData);
+
 //post routes
 app.post('/addUser', userData.addUser);
 
