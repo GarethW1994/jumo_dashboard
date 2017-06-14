@@ -37,9 +37,6 @@ app.use(express.static('public'));
 //routes index
 app.get('/', userData.home);
 
-app.get('/favicon.ico', function(req, res, next) {
-	res.send('favicon');
-})
 app.get('/form', userData.addNewUser);
 
 app.get('/getUser/:user', userData.getUser);
