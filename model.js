@@ -4,6 +4,9 @@ var assert = require('assert');
 
 module.exports = function () {
 	const userData = function () {
+	// Use native promises
+    mongoose.Promise = global.Promise;
+	
 		const user_schema = new mongoose.Schema({
 			userID: {
 				type: String,

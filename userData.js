@@ -1,6 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
+var assert = require('assert');
 
 module.exports = function(usersSchema) {
 		var importantCat = [];
@@ -21,21 +22,32 @@ module.exports = function(usersSchema) {
 		
 		const getUser = function(req, res, next) {
 			var id = req.params.user;
-		
-			var data = getData(id);
-			
-			console.log(data);
-		}
-		
-		function getData(userId) {
-			
-			usersSchema.find({userID: userId}, function(err, data) {
-				if (err) return (err);
-			}).then(function(data) {
-				return data;
-				
-				console.log(data);
+
+			var query = usersSchema.find({userID: id}, function(err, data) {
+				if (err) return (err);	
 			});
+			
+			var importantDat = [];
+			
+			query.then(function(data) {	
+				
+				for (var i = 0; i < data.length; i++) {
+					importantDat.push(data[i].important);
+				}
+					
+				console.log(importantDat);
+				res.render('categories', {importantData: importantDat});
+			});
+			
+			var promise = query.exec();
+			
+		};
+		
+		
+		function getData(dt) {
+			var importantArr = dt[0];
+		console.log(importantArr);
+			return importantArr;
 		}
 		
 		const addNewUser = function(req, res, next) {
