@@ -35,6 +35,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 //routes index
+app.get('/', function(req, res, next) {
+	res.redirect('home');
+});
+
 app.get('/home', userData.home);
 
 app.get('/form', userData.addNewUser);
